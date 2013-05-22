@@ -13,7 +13,7 @@ pod 'AFAddressBookManager'
 
 ### Manually
 
-Import all files from AFAddressBookManager folder to your project and add the AddressBook framework.
+Copy all files from AFAddressBookManager folder to your project and add the [AddressBook framework](http://developer.apple.com/library/ios/#documentation/AddressBook/Reference/AddressBook_iPhoneOS_Framework/).
 
 ## Usage
 
