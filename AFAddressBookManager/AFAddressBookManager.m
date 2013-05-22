@@ -38,7 +38,7 @@
             NSArray *allPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
             
             for (id person in allPeople) {
-                AFContact *contact = [Contact new];
+                AFContact *contact = [AFContact new];
                 
                 // Get the name of the contact
                 NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonFirstNameProperty);
@@ -80,7 +80,7 @@
 
 + (AFContact *)findContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    NSArray *contacts = [AddressBookManager allContactsFromAddressBook];
+    NSArray *contacts = [AFAddressBookManager allContactsFromAddressBook];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numbers contains %@", phoneNumber];
     NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
@@ -91,12 +91,12 @@
 
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [[AddressBookManager findContactWithPhoneNumber:phoneNumber] name];
+    return [[AFAddressBookManager findContactWithPhoneNumber:phoneNumber] name];
 }
 
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [[AddressBookManager findContactWithPhoneNumber:phoneNumber] photo];
+    return [[AFAddressBookManager findContactWithPhoneNumber:phoneNumber] photo];
 }
 
 @end
