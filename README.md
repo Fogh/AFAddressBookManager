@@ -5,7 +5,7 @@ Get contacts from iOS AddressBook by their phone numbers. Works on iOS 6+.
 
 ## Installation
 
-### Using [CococaPods](http://cocoapods.org). NOT WORKING YET!
+### Using [CocoaPods](http://cocoapods.org). NOT WORKING YET!
 
 ```ruby
 pod 'AFAddressBookManager'
