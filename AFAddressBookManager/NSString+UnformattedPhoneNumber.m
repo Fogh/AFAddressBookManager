@@ -9,10 +9,10 @@
 
 @implementation NSString (UnformattedPhoneNumber)
 
-- (NSString *)unformattedPhoneNumber {
-    NSCharacterSet *toExclude = [NSCharacterSet characterSetWithCharactersInString:@"/.()-+ "];
-    return [[self componentsSeparatedByCharactersInSet:toExclude] componentsJoinedByString: @""];
+- (NSString *)unformattedPhoneNumber
+{
     NSCharacterSet *toExclude = [NSCharacterSet characterSetWithCharactersInString:@"/.,()-+ "];
+    return [[self componentsSeparatedByCharactersInSet:toExclude] componentsJoinedByString:@""];
 }
 
 @end
