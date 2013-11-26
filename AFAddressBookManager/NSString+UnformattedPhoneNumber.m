@@ -12,6 +12,7 @@
 - (NSString *)unformattedPhoneNumber {
     NSCharacterSet *toExclude = [NSCharacterSet characterSetWithCharactersInString:@"/.()-+ "];
     return [[self componentsSeparatedByCharactersInSet:toExclude] componentsJoinedByString: @""];
+    NSCharacterSet *toExclude = [NSCharacterSet characterSetWithCharactersInString:@"/.,()-+ "];
 }
 
 @end
