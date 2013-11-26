@@ -7,6 +7,7 @@
 
 #import "AFAddressBookManager.h"
 #import <AddressBook/AddressBook.h>
+#import "AFContact.h"
 #import "NSString+UnformattedPhoneNumber.h"
 
 @implementation AFAddressBookManager
@@ -50,15 +51,15 @@
                 if (!lastName)
                     lastName = @"";
                 
-                [contact setName:[NSString stringWithFormat:@"%@ %@", firstName, lastName]];
+                contact.name = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
                 
                 // Get the photo of the contact
                 CFDataRef imageData = ABPersonCopyImageData((__bridge ABRecordRef)(person));
                 UIImage *image = [UIImage imageWithData:(__bridge NSData *)imageData];
-                [contact setPhoto:image];
+                contact.photo = image;
                 
                 // Get all phone numbers of the contact
-                NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+                NSMutableArray *tempArray = [NSMutableArray new];
                 ABMultiValueRef phoneNumbers = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonPhoneProperty);
                 
                 // If the contact has multiple phone numbers, iterate on each of them
@@ -68,7 +69,7 @@
                     [tempArray addObject:phoneNumberFromAB];
                 }
                 CFRelease(phoneNumbers);
-                [contact setNumbers:tempArray];
+                contact.numbers = tempArray;
                 [contacts addObject:contact];
             }
         }
