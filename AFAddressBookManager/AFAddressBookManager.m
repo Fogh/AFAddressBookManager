@@ -18,8 +18,6 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        contacts = [NSMutableArray new];
-
         CFErrorRef *error = nil;
         ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
         
@@ -37,6 +35,7 @@
         
         if (accessGranted) {
             NSArray *allPeople = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
+            contacts = [NSMutableArray arrayWithCapacity:allPeople.count];
             
             for (id person in allPeople) {
                 AFContact *contact = [AFContact new];
@@ -59,11 +58,11 @@
                 contact.photo = image;
                 
                 // Get all phone numbers of the contact
-                NSMutableArray *tempArray = [NSMutableArray new];
                 ABMultiValueRef phoneNumbers = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonPhoneProperty);
                 
                 // If the contact has multiple phone numbers, iterate on each of them
                 NSInteger phoneNumberCount = ABMultiValueGetCount(phoneNumbers);
+                NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:phoneNumberCount];
                 for (int i = 0; i < phoneNumberCount; i++) {
                     NSString *phoneNumberFromAB = [(__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phoneNumbers, i) unformattedPhoneNumber];
                     [tempArray addObject:phoneNumberFromAB];
