@@ -38,38 +38,43 @@
             contacts = [NSMutableArray arrayWithCapacity:allPeople.count];
             
             for (id person in allPeople) {
-                AFContact *contact = [AFContact new];
-                
-                // Get the name of the contact
-                NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonFirstNameProperty);
-                NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonLastNameProperty);
-                
-                if (!firstName)
-                    firstName = @"";
-                
-                if (!lastName)
-                    lastName = @"";
-                
-                contact.name = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-                
-                // Get the photo of the contact
-                CFDataRef imageData = ABPersonCopyImageData((__bridge ABRecordRef)(person));
-                UIImage *image = [UIImage imageWithData:(__bridge NSData *)imageData];
-                contact.photo = image;
-                
-                // Get all phone numbers of the contact
-                ABMultiValueRef phoneNumbers = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonPhoneProperty);
-                
-                // If the contact has multiple phone numbers, iterate on each of them
-                NSInteger phoneNumberCount = ABMultiValueGetCount(phoneNumbers);
-                NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:phoneNumberCount];
-                for (int i = 0; i < phoneNumberCount; i++) {
-                    NSString *phoneNumberFromAB = [(__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phoneNumbers, i) unformattedPhoneNumber];
-                    [tempArray addObject:phoneNumberFromAB];
+                @autoreleasepool {
+                    AFContact *contact = [AFContact new];
+                    
+                    // Get the name of the contact
+                    NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonFirstNameProperty);
+                    NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonLastNameProperty);
+                    
+                    if (!firstName)
+                        firstName = @"";
+                    
+                    if (!lastName)
+                        lastName = @"";
+                    
+                    contact.name = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+                    
+                    // Get the photo of the contact
+                    CFDataRef imageData = ABPersonCopyImageData((__bridge ABRecordRef)(person));
+                    UIImage *image = [UIImage imageWithData:(__bridge NSData *)imageData];
+                    if (imageData) {
+                        CFRelease(imageData);
+                    }
+                    contact.photo = image;
+                    
+                    // Get all phone numbers of the contact
+                    ABMultiValueRef phoneNumbers = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonPhoneProperty);
+                    
+                    // If the contact has multiple phone numbers, iterate on each of them
+                    NSInteger phoneNumberCount = ABMultiValueGetCount(phoneNumbers);
+                    NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:phoneNumberCount];
+                    for (int i = 0; i < phoneNumberCount; i++) {
+                        NSString *phoneNumberFromAB = [(__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(phoneNumbers, i) unformattedPhoneNumber];
+                        [tempArray addObject:phoneNumberFromAB];
+                    }
+                    CFRelease(phoneNumbers);
+                    contact.numbers = tempArray;
+                    [contacts addObject:contact];
                 }
-                CFRelease(phoneNumbers);
-                contact.numbers = tempArray;
-                [contacts addObject:contact];
             }
         }
         CFRelease(addressBook);
