@@ -91,12 +91,12 @@
 
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [[AFAddressBookManager findContactWithPhoneNumber:phoneNumber] name];
+    return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].name;
 }
 
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [[AFAddressBookManager findContactWithPhoneNumber:phoneNumber] photo];
+    return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].photo;
 }
 
 @end
