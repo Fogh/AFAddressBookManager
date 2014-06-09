@@ -1,7 +1,7 @@
 AFAddressBookManager
 ====================
-![Pod version](https://cocoapod-badges.herokuapp.com/v/AFAddressBookManager/badge.png)
-![Pod platform](https://cocoapod-badges.herokuapp.com/p/AFAddressBookManager/badge.png)
+![Pod version](http://img.shields.io/cocoapods/v/AFAddressBookManager.svg?style=flat)
+![Pod platform](http://img.shields.io/cocoapods/p/AFAddressBookManager.svg?style=flat)
 
 Get contacts from iOS AddressBook by their phone numbers. Works on iOS 6+.
 
