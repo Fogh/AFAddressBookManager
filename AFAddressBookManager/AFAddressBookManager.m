@@ -42,14 +42,8 @@
                     AFContact *contact = [AFContact new];
                     
                     // Get the name of the contact
-                    NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonFirstNameProperty);
-                    NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonLastNameProperty);
-                    
-                    if (!firstName)
-                        firstName = @"";
-                    
-                    if (!lastName)
-                        lastName = @"";
+                    NSString *firstName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonFirstNameProperty) ?: @"";
+                    NSString *lastName = (__bridge_transfer NSString*)ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonLastNameProperty) ?: @"";
                     
                     contact.name = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
                     
