@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'AFAddressBookManager'
-  s.version      = '1.0'
+  s.version      = '1.0.1'
   s.summary      = 'Get contacts from AddressBook by their phone numbers.'
   s.homepage 	   = 'https://github.com/Fogh/AFAddressBookManager'
   s.license      = 'MIT'
