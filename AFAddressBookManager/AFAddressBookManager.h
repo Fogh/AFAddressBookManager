@@ -9,7 +9,22 @@
 
 @interface AFAddressBookManager : NSObject
 
+/**
+ *  Get name of contact with specific phone number.
+ *
+ *  @param phoneNumber Phone number for the contact.
+ *
+ *  @return Name of contact.
+ */
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber;
+
+/**
+ *  Get photo of contact with specific phone number.
+ *
+ *  @param phoneNumber Phone number for the contact.
+ *
+ *  @return Photo of contact.
+ */
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber;
 
 @end
