@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage 	   = 'https://github.com/Fogh/AFAddressBookManager'
   s.license      = 'MIT'
   s.author       = { 'Anders Fogh Eriksen' => 'andfogh@gmail.com' }
-  s.source       = { :git => 'https://github.com/Fogh/AFAddressBookManager.git', :tag =>  '1.0.1'}
+  s.source       = { :git => 'https://github.com/Fogh/AFAddressBookManager.git', :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
   s.source_files = 'AFAddressBookManager/*.{h,m}'
   s.framework  = 'AddressBook'
