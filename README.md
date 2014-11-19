@@ -32,3 +32,10 @@ Get photo of contact:
 ```objectivec 
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber;
 ```
+
+
+<a href="http://Fogh.tip.me">
+  <img
+    alt="Tip Me With ChangeTip"
+    src="https://cdn.changetip.com/img/logos/tipme_square.png?1"/>
+</a>
