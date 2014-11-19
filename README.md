@@ -33,6 +33,7 @@ Get photo of contact:
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber;
 ```
 
+---
 
 <a href="http://Fogh.tip.me">
   <img
