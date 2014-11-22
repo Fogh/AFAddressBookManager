@@ -9,6 +9,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *numbers;
+@property (nonatomic, strong) NSArray *emails;
 @property (nonatomic, strong) UIImage *photo;
 
 @end

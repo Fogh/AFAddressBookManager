@@ -67,6 +67,20 @@
                     }
                     CFRelease(phoneNumbers);
                     contact.numbers = tempArray;
+                    
+                    // Get all email addresses of the contact
+                    ABMultiValueRef emailAddresses = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonEmailProperty);
+                    
+                    // If the contact has multiple phone numbers, iterate on each of them
+                    NSInteger emailAddressCount = ABMultiValueGetCount(emailAddresses);
+                    NSMutableArray *emailArray = [NSMutableArray arrayWithCapacity:emailAddressCount];
+                    for (int i = 0; i < emailAddressCount; i++) {
+                        NSString *emailAddressFromAB = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emailAddresses, i);
+                        [emailArray addObject:emailAddressFromAB];
+                    }
+                    CFRelease(emailAddresses);
+                    contact.emails = emailArray;
+                    
                     [contacts addObject:contact];
                 }
             }
@@ -88,6 +102,17 @@
     return matchedContact;
 }
 
++ (AFContact *)findContactWithEmailAddress:(NSString *)emailAddress
+{
+    NSArray *contacts = [AFAddressBookManager allContactsFromAddressBook];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"emails contains %@", emailAddress];
+    NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
+    
+    AFContact *matchedContact = [filteredArray lastObject];
+    return matchedContact;
+}
+
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber
 {
     return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].name;
@@ -96,6 +121,16 @@
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber
 {
     return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].photo;
+}
+
++ (NSString *)nameForContactWithEmailAddress:(NSString *)emailAddress
+{
+    return [AFAddressBookManager findContactWithEmailAddress:emailAddress].name;
+}
+
++ (UIImage *)photoForContactWithEmailAddress:(NSString *)emailAddress
+{
+    return [AFAddressBookManager findContactWithEmailAddress:emailAddress].photo;
 }
 
 @end
