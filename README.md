@@ -3,7 +3,7 @@ AFAddressBookManager
 ![Pod version](http://img.shields.io/cocoapods/v/AFAddressBookManager.svg?style=flat)
 ![Pod platform](http://img.shields.io/cocoapods/p/AFAddressBookManager.svg?style=flat)
 
-Get contacts from iOS Address Book by their phone numbers. Works on iOS 6+.
+Get contacts from iOS Address Book by their phone numbers and email addresses. Works on iOS 6+.
 
 ## Installation
 
