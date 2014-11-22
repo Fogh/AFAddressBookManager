@@ -23,14 +23,24 @@ Import `AFAddressBookManager.h` in the class where you want to use it.
 
 ### Available methods
 
-Get name (First name and last name) of contact:
+Get name (first and last) of contact by phone number:
 ```objectivec
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber;
 ```
 
-Get photo of contact:
+Get photo of contact by phone number:
 ```objectivec 
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber;
+```
+
+Get name (first and last) of contact by email address:
+```objectivec
++ (NSString *)nameForContactWithEmailAddress:(NSString *)emailAddress;
+```
+
+Get photo of contact by email address:
+```objectivec 
++ (UIImage *)photoForContactWithEmailAddress:(NSString *)emailAddress;
 ```
 
 ---
