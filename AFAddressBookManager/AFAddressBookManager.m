@@ -71,7 +71,7 @@
                     // Get all email addresses of the contact
                     ABMultiValueRef emailAddresses = ABRecordCopyValue((__bridge ABRecordRef)(person), kABPersonEmailProperty);
                     
-                    // If the contact has multiple phone numbers, iterate on each of them
+                    // If the contact has multiple email addresses, iterate on each of them
                     NSInteger emailAddressCount = ABMultiValueGetCount(emailAddresses);
                     NSMutableArray *emailArray = [NSMutableArray arrayWithCapacity:emailAddressCount];
                     for (int i = 0; i < emailAddressCount; i++) {
