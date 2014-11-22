@@ -27,4 +27,22 @@
  */
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber;
 
+/**
+ *  Get name of contact with specific email address.
+ *
+ *  @param emailAddress Email address for the contact.
+ *
+ *  @return Name of contact.
+ */
++ (NSString *)nameForContactWithEmailAddress:(NSString *)emailAddress;
+
+/**
+ *  Get photo of contact with specific email address.
+ *
+ *  @param emailAddress Email address for the contact.
+ *
+ *  @return Photo of contact.
+ */
++ (UIImage *)photoForContactWithEmailAddress:(NSString *)emailAddress;
+
 @end
