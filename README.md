@@ -44,6 +44,13 @@ Get photo of contact by email address:
 + (UIImage *)photoForContactWithEmailAddress:(NSString *)emailAddress;
 ```
 
+
+## Other iOS Open Source Projects by Me
+
+- [AFWebViewController](https://github.com/Fogh/AFWebViewController)
+- [AFMobilePayRequestHandler](https://github.com/Fogh/AFMobilePayRequestHandler)
+
+
 ---
 
 <a href="http://Fogh.tip.me">
