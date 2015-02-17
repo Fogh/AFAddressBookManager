@@ -14,8 +14,8 @@
 		5F25B9571A93C0AE007ABD13 /* AFAddressBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25B9521A93C0AE007ABD13 /* AFAddressBookManager.m */; };
 		5F25B9581A93C0AE007ABD13 /* AFContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25B9541A93C0AE007ABD13 /* AFContact.m */; };
 		5F25B9591A93C0AE007ABD13 /* NSString+UnformattedPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25B9561A93C0AE007ABD13 /* NSString+UnformattedPhoneNumber.m */; };
-		5F25B95B1A93C11F007ABD13 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F25B95A1A93C11F007ABD13 /* Default-568h@2x.png */; };
 		5F25B95C1A93C188007ABD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F25B94C1A93C088007ABD13 /* Main.storyboard */; };
+		5F745D161A93C3CF00165C72 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F745D151A93C3CF00165C72 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,7 @@
 		5F25B9541A93C0AE007ABD13 /* AFContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFContact.m; sourceTree = "<group>"; };
 		5F25B9551A93C0AE007ABD13 /* NSString+UnformattedPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UnformattedPhoneNumber.h"; sourceTree = "<group>"; };
 		5F25B9561A93C0AE007ABD13 /* NSString+UnformattedPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UnformattedPhoneNumber.m"; sourceTree = "<group>"; };
-		5F25B95A1A93C11F007ABD13 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		5F745D151A93C3CF00165C72 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Demo/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 		5F25B9071A93BCE1007ABD13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5F25B95A1A93C11F007ABD13 /* Default-568h@2x.png */,
+				5F745D151A93C3CF00165C72 /* Default-568h@2x.png */,
 				5F25B93E1A93C04F007ABD13 /* Images.xcassets */,
 				5F25B94C1A93C088007ABD13 /* Main.storyboard */,
 				5F25B93F1A93C04F007ABD13 /* Info.plist */,
@@ -161,7 +161,7 @@
 			files = (
 				5F25B95C1A93C188007ABD13 /* Main.storyboard in Resources */,
 				5F25B9461A93C04F007ABD13 /* Images.xcassets in Resources */,
-				5F25B95B1A93C11F007ABD13 /* Default-568h@2x.png in Resources */,
+				5F745D161A93C3CF00165C72 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
