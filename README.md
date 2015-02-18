@@ -12,7 +12,7 @@ Get contacts from iOS Address Book by their phone numbers and email addresses. W
 
 ```ruby
 platform :ios, '6.0'
-pod 'AFAddressBookManager', '~> 1.1'
+pod 'AFAddressBookManager', '~> 1.2'
 ```
 
 ### Manually
