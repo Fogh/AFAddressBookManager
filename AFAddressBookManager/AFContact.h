@@ -5,6 +5,9 @@
 //  Copyright (c) 2013-2015 Anders Eriksen. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @interface AFContact : NSObject
 
 @property (nonatomic, strong) NSString *name;

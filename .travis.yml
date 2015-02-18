@@ -1,0 +1,4 @@
+language: objective-c
+
+script:
+    - xctool -project AFAddressBookManager.xcodeproj -scheme 'AFAddressBookManager' -sdk iphonesimulator build
