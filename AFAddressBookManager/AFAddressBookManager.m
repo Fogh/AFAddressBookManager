@@ -98,7 +98,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"numbers contains %@", phoneNumber];
     NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
     
-    AFContact *matchedContact = [filteredArray lastObject];
+    AFContact *matchedContact = filteredArray.lastObject;
     return matchedContact;
 }
 
@@ -109,7 +109,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"emails contains %@", emailAddress];
     NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
     
-    AFContact *matchedContact = [filteredArray lastObject];
+    AFContact *matchedContact = filteredArray.lastObject;
     return matchedContact;
 }
 
