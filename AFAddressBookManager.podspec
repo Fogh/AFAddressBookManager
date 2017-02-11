@@ -8,7 +8,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/Fogh/AFAddressBookManager.git', :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
   s.source_files = 'AFAddressBookManager/*.{h,m}'
-  s.framework  = 'AddressBook'
+  s.framework    = 'AddressBook'
   s.requires_arc = true
   s.social_media_url = 'https://twitter.com/f0gh'
+  s.deprecated   = true
 end
