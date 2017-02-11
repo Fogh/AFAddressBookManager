@@ -6,7 +6,7 @@ AFAddressBookManager
 
 Get contacts from iOS Address Book by their phone numbers and email addresses. Works on iOS 6+.
 
-*If you are developing for iOS 9 and above you should definitely be using the [**Contacts framework**](https://developer.apple.com/library/prerelease/mac/documentation/Contacts/Reference/Contacts_Framework/index.html#//apple_ref/doc/uid/TP40015328) instead.*
+**Project has been deprecated. Instead you shound be using the [Contacts framework](https://developer.apple.com/library/prerelease/mac/documentation/Contacts/Reference/Contacts_Framework/index.html#//apple_ref/doc/uid/TP40015328)**
 
 ## Installation
 
