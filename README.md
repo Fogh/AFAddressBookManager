@@ -52,12 +52,3 @@ Get photo of contact by email address:
 
 - [AFWebViewController](https://github.com/Fogh/AFWebViewController)
 - [AFMobilePayRequestHandler](https://github.com/Fogh/AFMobilePayRequestHandler)
-
-
----
-
-<a href="http://Fogh.tip.me">
-  <img
-    alt="Tip Me With ChangeTip"
-    src="https://cdn.changetip.com/img/logos/tipme_square.png?1"/>
-</a>
